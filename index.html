@@ -33,7 +33,6 @@
     content="Outlook-safe, responsive HTML email templates with structured QA workflows and cross-client testing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://xhangreichris-max.github.io/">
-  
   <meta property="og:image" content="https://xhangreichris-max.github.io/work/assets/img/og-cover.jpg">
 
   <!-- Twitter -->
@@ -41,7 +40,6 @@
   <meta name="twitter:title" content="Christopher Shangrei | HTML Email Developer">
   <meta name="twitter:description"
     content="Outlook-safe, responsive HTML email templates with QA-first workflow.">
-  <!-- NOTE: keep this only if you create the file at work/assets/img/og-cover.jpg -->
   <meta name="twitter:image" content="https://xhangreichris-max.github.io/work/assets/img/og-cover.jpg">
 
   <!-- Structured data -->
@@ -258,6 +256,118 @@
       border: 1px solid rgba(255,255,255,.10);
     }
     code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* =========================================================
+       Mobile Responsiveness Fix Pack (NO Tailwind escaped selectors)
+       ========================================================= */
+    img, svg, video, canvas { max-width: 100%; height: auto; }
+    * { overflow-wrap: anywhere; }
+    body { overflow-x: hidden; }
+    section, footer { scroll-margin-top: 92px; }
+
+    @media (max-width: 640px){
+      nav > div { height: 64px !important; }
+      main { padding-top: 64px !important; }
+
+      .max-w-7xl { padding-left: 16px !important; padding-right: 16px !important; }
+
+      main > section:first-of-type { padding-top: 48px !important; padding-bottom: 56px !important; }
+      h1 { font-size: 2rem !important; line-height: 1.15 !important; }
+
+      main > section:first-of-type img{
+        max-height: 420px;
+        object-fit: contain !important;
+      }
+
+      /* Hero overlay card: keep inside flow on mobile */
+      main > section:first-of-type .glass-panel .glass-panel{
+        position: static !important;
+        max-width: 100% !important;
+        margin: 12px 12px 0 12px !important;
+      }
+
+      /* Proof strip */
+      section[class*="border-y"] .grid { gap: 16px !important; }
+
+      /* Work section: center + smaller */
+      #work{ padding-top: 60px !important; padding-bottom: 60px !important; }
+      #work h2{ font-size: 1.8rem !important; }
+      #work h3{ font-size: 1.6rem !important; }
+
+      /* Featured case study stack */
+      #work .glass-panel{ display: block !important; }
+      #work .glass-panel > div{ border-right: 0 !important; }
+      #work .glass-panel > div:first-child{ border-bottom: 1px solid rgba(0,0,0,.10) !important; }
+      html.dark #work .glass-panel > div:first-child{ border-bottom: 1px solid rgba(255,255,255,.10) !important; }
+
+      /* Buttons full width in work */
+      #work .flex.flex-wrap.gap-4{ flex-direction: column; }
+      #work .flex.flex-wrap.gap-4 a{ width: 100%; text-align: center; }
+
+      /* Code wrap */
+      pre { padding: 12px !important; overflow-x: auto !important; }
+      pre code { white-space: pre-wrap !important; word-break: break-word !important; }
+
+      footer .max-w-7xl { padding-top: 40px !important; padding-bottom: 40px !important; }
+    }
+
+    /* ===========================
+       Mobile menu drawer + overlay
+       =========================== */
+    #mobileMenuOverlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+      z-index: 45; /* below nav (50) but above page */
+    }
+    #mobileMenu{
+      background: var(--panelSolid);
+      border-top: 1px solid var(--border);
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+    #mobileMenu.is-open{
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #mobileMenuOverlay.is-open{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #mobileMenu a{
+      border-radius: 12px;
+      padding: 12px 12px;
+    }
+    #mobileMenu a:hover{ background: rgba(0,0,0,.06); }
+    html.dark #mobileMenu a:hover{ background: rgba(255,255,255,.06); }
+    html.menu-open, body.menu-open{ overflow: hidden; }
+
+    /* ===========================
+       Scroll-to-top button
+       =========================== */
+    #toTop{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+    #toTop.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
   </style>
 </head>
 
@@ -327,7 +437,7 @@
     </div>
 
     <!-- Mobile menu drawer -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-black/10 dark:border-white/10">
+    <div id="mobileMenu" class="md:hidden border-t border-black/10 dark:border-white/10">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-semibold text-[var(--muted)]">
         <a class="py-2 hover:text-[var(--text)] transition-colors" href="#work">Work</a>
         <a class="py-2 hover:text-[var(--text)] transition-colors" href="#process">Process</a>
@@ -344,7 +454,10 @@
     </div>
   </nav>
 
-  <main class="pt-20">
+  <!-- Overlay for mobile menu -->
+  <div id="mobileMenuOverlay" class="md:hidden" aria-hidden="true"></div>
+
+  <main class="pt-16 md:pt-20">
 
     <!-- Hero -->
     <section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
@@ -458,7 +571,7 @@
 
     <!-- Featured Case Study -->
     <section class="max-w-7xl mx-auto px-6 py-24" id="work">
-      <div class="reveal flex items-end justify-between gap-6 mb-12">
+      <div class="reveal work-header flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left gap-6 mb-12">
         <div>
           <h2 class="font-display text-3xl font-bold">Featured Case Study</h2>
           <p class="mt-2 max-w-2xl text-[var(--muted)]">
@@ -472,7 +585,7 @@
         </a>
       </div>
 
-      <div class="glass-panel rounded-2xl overflow-hidden grid lg:grid-cols-2">
+      <div class="glass-panel rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
         <div class="bg-primary/5 p-8 flex items-center justify-center border-r border-black/10 dark:border-white/10">
           <div class="w-full rounded-lg overflow-hidden border border-black/10 dark:border-white/10 shadow-[var(--shadow2)]">
             <img
@@ -969,6 +1082,13 @@
 
   </main>
 
+  <!-- Scroll to top button -->
+  <button id="toTop"
+    class="glass-panel rounded-xl px-3 py-3 inline-flex items-center justify-center border border-black/10 dark:border-white/10 hover:opacity-90 transition"
+    type="button" aria-label="Scroll to top" title="Scroll to top">
+    <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+  </button>
+
   <!-- Smooth Reveal Script -->
   <script>
     (function () {
@@ -1002,19 +1122,47 @@
     })();
   </script>
 
-  <!-- Mobile menu toggle -->
+  <!-- Mobile menu toggle (drawer + overlay + ESC + body lock) -->
   <script>
     (function () {
       const btn = document.getElementById("mobileMenuBtn");
       const menu = document.getElementById("mobileMenu");
-      if (!btn || !menu) return;
+      const overlay = document.getElementById("mobileMenuOverlay");
+      if (!btn || !menu || !overlay) return;
 
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
+      function openMenu(){
+        menu.classList.add("is-open");
+        overlay.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+        document.documentElement.classList.add("menu-open");
+        document.body.classList.add("menu-open");
+      }
+
+      function closeMenu(){
+        menu.classList.remove("is-open");
+        overlay.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+        document.documentElement.classList.remove("menu-open");
+        document.body.classList.remove("menu-open");
+      }
+
+      function toggleMenu(){
+        if (menu.classList.contains("is-open")) closeMenu();
+        else openMenu();
+      }
+
+      btn.setAttribute("aria-controls", "mobileMenu");
+      btn.setAttribute("aria-expanded", "false");
+
+      btn.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", closeMenu);
 
       menu.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", () => menu.classList.add("hidden"));
+        a.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
       });
     })();
   </script>
@@ -1037,6 +1185,32 @@
     })();
   </script>
 
-</body>
+  <!-- Scroll to top -->
+  <script>
+    (function () {
+      const btn = document.getElementById("toTop");
+      if (!btn) return;
 
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function update(){
+        const y = window.scrollY || document.documentElement.scrollTop || 0;
+        if (y > 420) btn.classList.add("is-visible");
+        else btn.classList.remove("is-visible");
+      }
+
+      btn.addEventListener("click", () => {
+        if (reduce) {
+          window.scrollTo(0, 0);
+          return;
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", update, { passive: true });
+      update();
+    })();
+  </script>
+
+</body>
 </html>
