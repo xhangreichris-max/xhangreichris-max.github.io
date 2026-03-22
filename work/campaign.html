@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Klaviyo Welcome Flow Case Study | Christopher Shangrei | HTML Email Developer</title>
+  <meta
+    name="description"
+    content="Klaviyo welcome flow case study by Christopher Shangrei featuring an email capture landing page, 5-email lifecycle automation, Outlook-safe email development, and QA-focused workflow proof."
+  />
+  <meta name="author" content="Christopher Shangrei" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://xhangreichris-max.github.io/work/campaign.html" />
+
+  <!-- Favicons -->
+ <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico?v=3" />
+<link rel="shortcut icon" href="assets/img/favicon/favicon.ico?v=3" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png?v=3" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png?v=3" />
+<link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png?v=3" />>
+
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f6f5f8" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Christopher Shangrei Portfolio" />
+  <meta property="og:title" content="Klaviyo Welcome Flow Case Study | Christopher Shangrei" />
+  <meta
+    property="og:description"
+    content="Email capture landing page, 5-email lifecycle flow, Outlook-safe development, and QA validation in this Klaviyo automation case study."
+  />
+  <meta property="og:url" content="https://xhangreichris-max.github.io/work/campaign.html" />
+  <meta property="og:image" content="https://xhangreichris-max.github.io/work/assets/img/og-campaign.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Klaviyo Welcome Flow Case Study | Christopher Shangrei" />
+  <meta
+    name="twitter:description"
+    content="Klaviyo automation case study with landing page capture, lifecycle emails, Outlook-safe HTML coding, and QA-first workflow."
+  />
+  <meta name="twitter:image" content="https://xhangreichris-max.github.io/work/assets/img/og-campaign.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Klaviyo Welcome Flow Case Study | Christopher Shangrei",
+    "url": "https://xhangreichris-max.github.io/work/campaign.html",
+    "description": "A campaign case study showing an email capture landing page, Klaviyo welcome flow, lifecycle email sequence, and QA-focused HTML email implementation.",
+    "author": {
+      "@type": "Person",
+      "name": "Christopher Shangrei",
+      "jobTitle": "HTML Email Developer",
+      "url": "https://xhangreichris-max.github.io/",
+      "sameAs": [
+        "https://github.com/xhangreichris-max",
+        "https://www.linkedin.com/in/christopher-shangrei-949a9a3b3/"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Theme bootstrap -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved || (systemDark ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#895af6",
+            "accent-cyan": "#06b6d4"
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+            sans: ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            full: "9999px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root{
+      --bg: #f6f5f8;
+      --text: #0b0b0f;
+      --muted: rgba(11,11,15,.68);
+      --muted2: rgba(11,11,15,.52);
+      --panel: rgba(255,255,255,.70);
+      --panelSolid: rgba(255,255,255,.92);
+      --border: rgba(11,11,15,.12);
+      --nav: rgba(246,245,248,.78);
+      --shadow: 0 20px 40px -25px rgba(0,0,0,.30);
+      --shadow2: 0 18px 35px -24px rgba(0,0,0,.22);
+      --codebg: rgba(0,0,0,.06);
+
+      --glowA: rgba(137, 90, 246, .18);
+      --glowB: rgba(6, 182, 212, .14);
+      --glowC: rgba(90, 137, 246, .10);
+    }
+
+    html.dark{
+      --bg: #050505;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.50);
+      --panel: rgba(10,10,10,.85);
+      --panelSolid: rgba(10,10,10,.92);
+      --border: rgba(255,255,255,.08);
+      --nav: rgba(5,5,5,.78);
+      --shadow: 0 20px 40px -25px rgba(0,0,0,.55);
+      --shadow2: 0 18px 35px -24px rgba(0,0,0,.50);
+      --codebg: rgba(255,255,255,.06);
+
+      --glowA: rgba(137, 90, 246, .22);
+      --glowB: rgba(6, 182, 212, .18);
+      --glowC: rgba(90, 137, 246, .12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body{
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .font-display{ font-family: "Space Grotesk", sans-serif; }
+
+    .gradient-text{
+      background: linear-gradient(90deg, #8b5cf6 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass-panel{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .nav-blur{
+      background: var(--nav);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .ambient-bg{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(900px 700px at 12% 18%, var(--glowA), transparent 60%),
+        radial-gradient(900px 700px at 88% 20%, var(--glowB), transparent 58%),
+        radial-gradient(900px 700px at 65% 92%, var(--glowC), transparent 60%);
+      filter: saturate(1.1);
+      transform: translateZ(0);
+    }
+
+    .grain{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .06;
+      mix-blend-mode: overlay;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+
+    .material-symbols-outlined{
+      font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+      line-height: 1;
+      vertical-align: middle;
+    }
+
+    .reveal{
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 800ms cubic-bezier(.16,1,.3,1), transform 800ms cubic-bezier(.16,1,.3,1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1{ transition-delay: 140ms; }
+    .reveal-delay-2{ transition-delay: 280ms; }
+    .reveal-delay-3{ transition-delay: 420ms; }
+
+    pre{
+      overflow:auto;
+      border-radius: 16px;
+      padding: 14px;
+      background: var(--codebg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow2);
+    }
+
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .scrollbar{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #8b5cf6 0%, #06b6d4 100%);
+      z-index: 60;
+      opacity: .85;
+    }
+
+    a:focus-visible,
+    button:focus-visible{
+      outline: 2px solid rgba(137, 90, 246, .65);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+
+    img, svg, video, canvas{
+      max-width: 100%;
+      height: auto;
+    }
+
+    *{
+      overflow-wrap: anywhere;
+    }
+
+    section{
+      scroll-margin-top: 100px;
+    }
+
+    .code-window{
+      background: rgba(0,0,0,.58);
+    }
+
+    .mobile-strip::-webkit-scrollbar{
+      display: none;
+    }
+
+    .mobile-strip{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    #toTop{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    #toTop.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    @media (max-width: 640px){
+      nav .nav-inner{
+        min-height: 64px;
+      }
+
+      main{
+        padding-top: 112px !important;
+      }
+
+      h1{
+        font-size: 2.3rem !important;
+        line-height: 1.08 !important;
+      }
+
+      .hero-actions{
+        flex-direction: column;
+      }
+
+      .hero-actions a{
+        width: 100%;
+        justify-content: center;
+      }
+
+      pre{
+        padding: 12px !important;
+      }
+
+      pre code{
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto !important; }
+      .reveal{ opacity: 1 !important; transform: none !important; transition: none !important; }
+      .animate-ping{ animation: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-[var(--bg)] text-[var(--text)] font-sans antialiased selection:bg-primary/25 selection:text-white overflow-x-hidden">
+  <div class="ambient-bg"></div>
+  <div class="grain"></div>
+  <div class="scrollbar" id="scrollbar"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 nav-blur border-b border-black/10 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="nav-inner h-16 flex items-center justify-between gap-4">
+        <a href="../index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-primary to-accent-cyan rounded-lg flex items-center justify-center shadow-sm">
+            <span class="material-symbols-outlined text-white text-xl">code</span>
+          </div>
+
+          <div class="leading-tight">
+            <span class="block font-display font-bold text-sm sm:text-base md:text-lg tracking-tight uppercase group-hover:opacity-90 transition-opacity">
+              Christopher Shangrei
+            </span>
+            <span class="block text-xs text-[var(--muted2)] -mt-0.5">Klaviyo Case Study</span>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-[var(--muted)]">
+          <a class="hover:text-[var(--text)] transition-colors" href="#overview">Overview</a>
+          <a class="hover:text-[var(--text)] transition-colors" href="#automation">Automation</a>
+          <a class="hover:text-[var(--text)] transition-colors" href="#emails">Emails</a>
+          <a class="hover:text-[var(--text)] transition-colors" href="#qa">QA Proof</a>
+          <a class="hover:text-[var(--text)] transition-colors" href="#roadmap">Roadmap</a>
+          <a class="hover:text-[var(--text)] transition-colors" href="#contact">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button
+            id="themeToggle"
+            class="p-2 rounded-lg border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+          </button>
+
+          <a
+            href="../index.html"
+            class="hidden sm:inline-flex px-4 py-2 text-sm font-bold bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 rounded-lg transition-all items-center gap-2"
+          >
+            <span class="material-symbols-outlined text-sm">home</span>
+            Home
+          </a>
+
+          <a
+            href="#emails"
+            class="px-4 py-2 text-sm font-bold bg-primary hover:bg-primary/90 text-white rounded-lg transition-all inline-flex items-center gap-2 shadow-sm"
+          >
+            <span class="material-symbols-outlined text-sm">mail</span>
+            Emails
+          </a>
+        </div>
+      </div>
+
+      <div class="md:hidden pb-3 overflow-x-auto mobile-strip">
+        <div class="flex gap-3 text-xs font-bold text-[var(--muted)] whitespace-nowrap">
+          <a class="px-3 py-2 rounded-lg border border-black/10 dark:border-white/10" href="#overview">Overview</a>
+          <a class="px-3 py-2 rounded-lg border border-black/10 dark:border-white/10" href="#automation">Automation</a>
+          <a class="px-3 py-2 rounded-lg border border-black/10 dark:border-white/10" href="#emails">Emails</a>
+          <a class="px-3 py-2 rounded-lg border border-black/10 dark:border-white/10" href="#qa">QA</a>
+          <a class="px-3 py-2 rounded-lg border border-black/10 dark:border-white/10" href="#roadmap">Roadmap</a>
+          <a class="px-3 py-2 rounded-lg border border-black/10 dark:border-white/10" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-24 md:pt-28 pb-16">
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="flex flex-col gap-8">
+        <div class="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          E-commerce automation case study
+        </div>
+
+        <h1 class="reveal reveal-delay-1 font-display text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight">
+          Klaviyo <span class="gradient-text">welcome flow</span> with landing page capture and QA proof
+        </h1>
+
+        <p class="reveal reveal-delay-2 text-lg text-[var(--muted)] max-w-xl leading-relaxed">
+          A portfolio case study showing a full funnel: landing page signup, subscriber flow entry, 5-email lifecycle sequence,
+          and HTML email implementation focused on Outlook-safe structure and practical QA validation.
+        </p>
+
+        <div class="reveal reveal-delay-3 flex flex-wrap gap-4 hero-actions">
+          <a
+            href="northpeak-landing.html"
+            class="px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all inline-flex items-center gap-2"
+          >
+            View Landing Page
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+
+          <a
+            href="#automation"
+            class="px-8 py-4 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 font-bold rounded-lg transition-all inline-flex items-center gap-2"
+          >
+            View Automation Flow
+            <span class="material-symbols-outlined text-sm">account_tree</span>
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-3 flex flex-wrap gap-2 pt-2">
+          <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-semibold text-[var(--muted)]">Klaviyo Flow Logic</span>
+          <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-semibold text-[var(--muted)]">Outlook-safe HTML</span>
+          <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-semibold text-[var(--muted)]">QA-first Workflow</span>
+          <span class="px-3 py-1.5 glass-panel rounded-lg text-xs font-semibold text-[var(--muted)]">Lifecycle Email Series</span>
+        </div>
+
+        <p class="reveal reveal-delay-3 text-sm text-[var(--muted2)]">
+          Portfolio simulation • Built to demonstrate email engineering, automation thinking, and practical QA workflow
+        </p>
+      </div>
+
+      <div class="relative group reveal">
+        <div class="absolute -inset-1 bg-gradient-to-r from-primary/25 to-accent-cyan/25 rounded-2xl blur opacity-40"></div>
+
+        <div class="relative w-full rounded-2xl overflow-hidden glass-panel p-6 sm:p-8">
+          <div class="grid gap-4">
+            <div class="glass-panel rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-black/10 dark:border-white/10">
+                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                <span class="w-3 h-3 bg-yellow-400 rounded-full"></span>
+                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                <span class="ml-4 text-xs text-[var(--muted)]">landing-page-signup</span>
+              </div>
+
+              <div class="p-6 bg-black/5 dark:bg-white/5">
+                <div class="h-4 w-full rounded bg-primary/20 mb-4"></div>
+                <div class="h-4 w-2/3 rounded bg-black/10 dark:bg-white/10 mb-3"></div>
+                <div class="h-4 w-1/2 rounded bg-black/10 dark:bg-white/10 mb-6"></div>
+                <div class="h-11 w-40 rounded-lg bg-primary"></div>
+              </div>
+            </div>
+
+            <div class="glass-panel rounded-xl overflow-hidden">
+              <div class="p-5 bg-white/70 dark:bg-black/30">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-sm">bolt</span>
+                  </div>
+                  <div class="h-4 w-32 rounded bg-black/10 dark:bg-white/10"></div>
+                </div>
+
+                <div class="ml-4 pl-4 border-l-2 border-primary/30 flex flex-col gap-4">
+                  <div class="p-3 bg-black/5 dark:bg-white/5 rounded-lg border border-black/10 dark:border-white/10 flex items-center gap-3">
+                    <div class="w-6 h-6 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-xs">mail</span>
+                    </div>
+                    <div class="h-2 w-24 rounded bg-black/10 dark:bg-white/10"></div>
+                  </div>
+
+                  <div class="p-3 bg-black/5 dark:bg-white/5 rounded-lg border border-black/10 dark:border-white/10 flex items-center gap-3">
+                    <div class="w-6 h-6 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-xs">schedule</span>
+                    </div>
+                    <div class="h-2 w-16 rounded bg-black/10 dark:bg-white/10"></div>
+                  </div>
+
+                  <div class="p-3 bg-black/5 dark:bg-white/5 rounded-lg border border-black/10 dark:border-white/10 flex items-center gap-3">
+                    <div class="w-6 h-6 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-xs">mail</span>
+                    </div>
+                    <div class="h-2 w-28 rounded bg-black/10 dark:bg-white/10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute bottom-6 right-6 max-w-[280px] p-4 glass-panel rounded-xl hidden sm:block">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-[color:var(--text)]">verified</span>
+                <div class="text-xs">
+                  <p class="font-bold uppercase tracking-tight">Portfolio-ready flow</p>
+                  <p class="mt-1 text-[var(--muted)]">
+                    Landing capture, automation logic, email previews, and QA proof presented in one structured case study.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof strip -->
+    <section class="border-y border-black/10 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="reveal flex flex-col gap-1">
+          <div class="flex items-center gap-2 text-primary">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="font-display text-3xl font-bold">5</span>
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-[var(--muted2)]">Lifecycle Emails</p>
+        </div>
+
+        <div class="reveal reveal-delay-1 flex flex-col gap-1">
+          <div class="flex items-center gap-2 text-[color:var(--text)]">
+            <span class="material-symbols-outlined text-accent-cyan">account_tree</span>
+            <span class="font-display text-3xl font-bold">1</span>
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-[var(--muted2)]">Flow Architecture</p>
+          <p class="text-xs text-[var(--muted2)]">Signup → Trigger → Sequence</p>
+        </div>
+
+        <div class="reveal reveal-delay-2 flex flex-col gap-1">
+          <div class="flex items-center gap-2 text-primary">
+            <span class="material-symbols-outlined">mark_email_read</span>
+            <span class="font-display text-3xl font-bold">Outlook</span>
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-[var(--muted2)]">Compatibility Focus</p>
+          <p class="text-xs text-[var(--muted2)]">MSO + bulletproof patterns</p>
+        </div>
+
+        <div class="reveal reveal-delay-3 flex flex-col gap-1">
+          <div class="flex items-center gap-2 text-accent-cyan">
+            <span class="material-symbols-outlined">fact_check</span>
+            <span class="font-display text-3xl font-bold">QA</span>
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-[var(--muted2)]">Testing Proof</p>
+          <p class="text-xs text-[var(--muted2)]">Cross-client preview evidence</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="max-w-7xl mx-auto px-4 sm:px-6 py-24">
+      <div class="text-center mb-14 reveal">
+        <h2 class="font-display text-4xl font-bold mb-3">Campaign Overview</h2>
+        <p class="text-[var(--muted)]">The strategic foundation of the project and what the build demonstrates.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="reveal glass-panel p-8 rounded-2xl space-y-6 hover:border-primary/40 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-3xl">error</span>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-bold">Problem</h3>
+            <p class="text-[var(--muted)] leading-relaxed">
+              New subscribers often enter a list without timely follow-up, reducing early engagement and leaving the first few days underused.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1 glass-panel p-8 rounded-2xl space-y-6 hover:border-primary/40 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-3xl">task_alt</span>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-bold">Solution</h3>
+            <p class="text-[var(--muted)] leading-relaxed">
+              A 5-part Klaviyo welcome flow supported by a signup landing page and responsive HTML emails built to be clear, reusable, and reliable across major clients.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 glass-panel p-8 rounded-2xl space-y-6 hover:border-primary/40 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-3xl">person</span>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-bold">My Role</h3>
+            <p class="text-[var(--muted)] leading-relaxed">
+              Portfolio developer responsible for page structure, HTML email architecture, automation mapping, and QA presentation for the full campaign flow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Funnel -->
+    <section id="funnel" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden relative">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-display text-3xl font-bold mb-4">The Conversion Funnel</h2>
+          <p class="text-[var(--muted)]">From signup to flow entry and conversion-focused follow-up.</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 relative">
+          <div class="reveal flex flex-col items-center gap-3 w-full max-w-sm">
+            <div class="glass-panel px-6 py-4 rounded-xl w-full flex items-center gap-4 hover:border-primary/40 transition-all cursor-default">
+              <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">1</div>
+              <span class="font-bold">Landing Page Signup</span>
+              <span class="material-symbols-outlined ml-auto text-[var(--muted)]">web</span>
+            </div>
+            <span class="material-symbols-outlined text-primary text-2xl animate-bounce">arrow_downward</span>
+          </div>
+
+          <div class="reveal reveal-delay-1 flex flex-col items-center gap-3 w-full max-w-sm">
+            <div class="glass-panel px-6 py-4 rounded-xl w-full flex items-center gap-4 hover:border-primary/40 transition-all cursor-default">
+              <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">2</div>
+              <span class="font-bold">Subscriber Added to List</span>
+              <span class="material-symbols-outlined ml-auto text-[var(--muted)]">person_add</span>
+            </div>
+            <span class="material-symbols-outlined text-primary text-2xl animate-bounce">arrow_downward</span>
+          </div>
+
+          <div class="reveal reveal-delay-2 flex flex-col items-center gap-3 w-full max-w-sm">
+            <div class="glass-panel px-6 py-4 rounded-xl w-full flex items-center gap-4 hover:border-primary/40 transition-all cursor-default">
+              <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">3</div>
+              <span class="font-bold">Klaviyo Flow Trigger</span>
+              <span class="material-symbols-outlined ml-auto text-[var(--muted)]">settings_suggest</span>
+            </div>
+            <span class="material-symbols-outlined text-primary text-2xl animate-bounce">arrow_downward</span>
+          </div>
+
+          <div class="reveal reveal-delay-3 flex flex-col items-center gap-3 w-full max-w-sm">
+            <div class="glass-panel px-6 py-4 rounded-xl w-full flex items-center gap-4 hover:border-primary/40 transition-all cursor-default">
+              <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">4</div>
+              <span class="font-bold">Lifecycle Sequence</span>
+              <span class="material-symbols-outlined ml-auto text-[var(--muted)]">forward_to_inbox</span>
+            </div>
+            <span class="material-symbols-outlined text-primary text-2xl animate-bounce">arrow_downward</span>
+          </div>
+
+          <div class="reveal reveal-delay-3 flex flex-col items-center gap-3 w-full max-w-sm hover:-translate-y-1 transition-transform cursor-default">
+            <div class="bg-primary/20 border-2 border-primary px-6 py-4 rounded-xl w-full flex items-center gap-4 shadow-[0_0_20px_rgba(115,17,212,0.3)]">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold">5</div>
+              <span class="font-bold">Conversion Offer</span>
+              <span class="material-symbols-outlined ml-auto text-primary">shopping_cart_checkout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Automation -->
+    <section id="automation" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+        <div class="space-y-2">
+          <h2 class="font-display text-3xl font-bold tracking-tight">Klaviyo Flow Architecture</h2>
+          <p class="text-[var(--muted)]">Flow logic laid out as a practical lifecycle sequence.</p>
+        </div>
+        <div class="flex items-center gap-2 text-primary font-bold">
+          <span class="material-symbols-outlined">developer_board</span>
+          <span>Logic Flow Visualization</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-4 space-y-4">
+          <div class="reveal p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+            <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center text-xs">
+              <span class="material-symbols-outlined text-sm">bolt</span>
+            </div>
+            <div>
+              <p class="text-xs text-[var(--muted2)] uppercase font-bold">Trigger</p>
+              <p class="text-sm font-bold">New List Subscriber</p>
+            </div>
+          </div>
+
+          <div class="ml-4 pl-4 border-l-2 border-black/10 dark:border-white/10 space-y-4">
+            <div class="reveal reveal-delay-1 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+              <div class="w-8 h-8 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">mail</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Email 1</p>
+                <p class="text-sm font-bold">Brand Welcome</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-1 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 opacity-70 flex items-center gap-4">
+              <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Delay</p>
+                <p class="text-sm font-bold">24 Hours</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-2 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+              <div class="w-8 h-8 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">mail</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Email 2</p>
+                <p class="text-sm font-bold">Problem / Solution Info</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-2 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 opacity-70 flex items-center gap-4">
+              <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Delay</p>
+                <p class="text-sm font-bold">48 Hours</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-3 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+              <div class="w-8 h-8 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">mail</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Email 3</p>
+                <p class="text-sm font-bold">Social Proof &amp; Trust</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-3 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 opacity-70 flex items-center gap-4">
+              <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Delay</p>
+                <p class="text-sm font-bold">24 Hours</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-3 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 flex items-center gap-4 hover:border-primary/30 transition-colors">
+              <div class="w-8 h-8 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">mail</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Email 4</p>
+                <p class="text-sm font-bold">Offer</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-3 p-4 rounded-xl bg-white/70 dark:bg-black/40 border border-black/10 dark:border-white/10 opacity-70 flex items-center gap-4">
+              <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+              </div>
+              <div>
+                <p class="text-xs text-[var(--muted2)] uppercase font-bold">Delay</p>
+                <p class="text-sm font-bold">24 Hours</p>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-3 p-4 rounded-xl border border-primary/30 bg-primary/10 flex items-center gap-4 hover:border-primary/60 transition-colors shadow-[0_0_15px_rgba(115,17,212,0.1)]">
+              <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center text-xs">
+                <span class="material-symbols-outlined text-sm">timer</span>
+              </div>
+              <div>
+                <p class="text-xs text-primary uppercase font-bold">Email 5</p>
+                <p class="text-sm font-bold text-primary">Final Reminder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="reveal lg:col-span-8 glass-panel rounded-2xl p-2 min-h-[500px] overflow-hidden relative">
+  <img
+    loading="lazy"
+    src="assets/img/klayviyo-flow.png"
+    alt="Example Klaviyo automation workflow showing flow builder interface."
+    class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500"
+    onerror="this.style.display='none'; document.getElementById('flowFallback').style.display='flex';"
+  />
+
+  <div
+    id="flowFallback"
+    class="hidden absolute inset-0 bg-zinc-950 rounded-xl items-center justify-center p-8"
+  >
+    <div class="text-center space-y-4">
+      <span class="material-symbols-outlined text-6xl text-primary/40">account_tree</span>
+      <p class="text-[var(--muted)] font-medium">Flow Builder Logic View</p>
+      <p class="text-xs text-[var(--muted2)]">assets/img/klaviyo-flow.png</p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-4 right-4 bg-black/70 backdrop-blur px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/10 z-10">
+    <span class="text-xs text-white">Example Klaviyo automation workflow</span>
+  </div>
+</div>
+        
+
+          <div class="absolute bottom-4 right-4 bg-black/70 backdrop-blur px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/10">
+            <span class="text-xs text-white">Example Klaviyo automation workflow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emails -->
+    <section id="emails" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-3xl font-bold tracking-tight mb-4">Lifecycle Email Series</h2>
+        <p class="text-[var(--muted)]">Responsive HTML email templates designed for clarity, structure, and conversion-oriented flow progression.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="reveal glass-panel p-4 rounded-2xl space-y-4 hover:-translate-y-2 transition-all group hover:border-primary/30">
+          <div class="bg-zinc-900 rounded-xl aspect-[3/4] overflow-hidden flex items-center justify-center border border-black/10 dark:border-white/10 relative">
+            <img loading="lazy" src="assets\img\klayviyo-1.png" alt="Welcome email design preview" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+            <span class="material-symbols-outlined text-4xl text-white/10 relative z-0">drafts</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-bold">Welcome Email</h4>
+              <p class="text-xs text-[var(--muted2)]">Goal: Brand introduction</p>
+            </div>
+            <div class="flex items-center justify-between text-[10px] font-bold tracking-tighter uppercase text-[var(--muted2)] border-t border-black/10 dark:border-white/10 pt-2">
+              <span>Day 0</span>
+              <span class="text-primary bg-primary/10 px-2 py-0.5 rounded">Instant</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="email/welcome-01.html" class="py-2 text-[10px] text-center font-bold rounded bg-primary/20 text-primary hover:bg-primary/30 transition-colors">VIEW HTML</a>
+              <a href="assets\img\klayviyo-1.png" target="_blank" rel="noopener" class="py-2 text-[10px] text-center font-bold rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">PREVIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1 glass-panel p-4 rounded-2xl space-y-4 hover:-translate-y-2 transition-all group hover:border-primary/30">
+          <div class="bg-zinc-900 rounded-xl aspect-[3/4] overflow-hidden flex items-center justify-center border border-black/10 dark:border-white/10 relative">
+            <img loading="lazy" src="assets\img\klayviyo-2.png" alt="Education flow email design preview" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+            <span class="material-symbols-outlined text-4xl text-white/10 relative z-0">school</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-bold">Education Flow</h4>
+              <p class="text-xs text-[var(--muted2)]">Goal: User education</p>
+            </div>
+            <div class="flex items-center justify-between text-[10px] font-bold tracking-tighter uppercase text-[var(--muted2)] border-t border-black/10 dark:border-white/10 pt-2">
+              <span>Day 1</span>
+              <span class="text-primary bg-primary/10 px-2 py-0.5 rounded">+24h</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="email/welcome-02.html" class="py-2 text-[10px] text-center font-bold rounded bg-primary/20 text-primary hover:bg-primary/30 transition-colors">VIEW HTML</a>
+              <a href="assets/img/klaviyo-2.png" target="_blank" rel="noopener" class="py-2 text-[10px] text-center font-bold rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">PREVIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 glass-panel p-4 rounded-2xl space-y-4 hover:-translate-y-2 transition-all group hover:border-primary/30">
+          <div class="bg-zinc-900 rounded-xl aspect-[3/4] overflow-hidden flex items-center justify-center border border-black/10 dark:border-white/10 relative">
+            <img loading="lazy" src="assets\img\klayviyo-4.png" alt="Social proof email design preview" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+            <span class="material-symbols-outlined text-4xl text-white/10 relative z-0">verified</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-bold">Social Proof</h4>
+              <p class="text-xs text-[var(--muted2)]">Goal: Build trust</p>
+            </div>
+            <div class="flex items-center justify-between text-[10px] font-bold tracking-tighter uppercase text-[var(--muted2)] border-t border-black/10 dark:border-white/10 pt-2">
+              <span>Day 3</span>
+              <span class="text-primary bg-primary/10 px-2 py-0.5 rounded">+48h</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="email\welcome-03.html" class="py-2 text-[10px] text-center font-bold rounded bg-primary/20 text-primary hover:bg-primary/30 transition-colors">VIEW HTML</a>
+              <a href="assets\img\klayviyo-4.png" target="_blank" rel="noopener" class="py-2 text-[10px] text-center font-bold rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">PREVIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-3 glass-panel p-4 rounded-2xl space-y-4 hover:-translate-y-2 transition-all group hover:border-primary/30">
+          <div class="bg-zinc-900 rounded-xl aspect-[3/4] overflow-hidden flex items-center justify-center border border-black/10 dark:border-white/10 relative">
+            <img loading="lazy" src="assets\img\klayviyo-3.png" alt="Offer email design preview" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+            <span class="material-symbols-outlined text-4xl text-white/10 relative z-0">sell</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-bold">The Offer</h4>
+              <p class="text-xs text-[var(--muted2)]">Goal: Initial sale</p>
+            </div>
+            <div class="flex items-center justify-between text-[10px] font-bold tracking-tighter uppercase text-[var(--muted2)] border-t border-black/10 dark:border-white/10 pt-2">
+              <span>Day 4</span>
+              <span class="text-primary bg-primary/10 px-2 py-0.5 rounded">+24h</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="email\wellcome-04.html" class="py-2 text-[10px] text-center font-bold rounded bg-primary/20 text-primary hover:bg-primary/30 transition-colors">VIEW HTML</a>
+              <a href="assets\img\klayviyo-3.png" target="_blank" rel="noopener" class="py-2 text-[10px] text-center font-bold rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">PREVIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-3 glass-panel p-4 rounded-2xl space-y-4 hover:-translate-y-2 transition-all group border-t-2 border-t-primary shadow-[0_-5px_20px_rgba(115,17,212,0.1)]">
+          <div class="bg-zinc-900 rounded-xl aspect-[3/4] overflow-hidden flex items-center justify-center border border-black/10 dark:border-white/10 relative">
+            <img loading="lazy" src="assets\img\klayviyo-5.png" alt="Final reminder email design preview" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">
+            <span class="material-symbols-outlined text-4xl text-white/10 relative z-0">timer</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-bold text-primary">Final Reminder</h4>
+              <p class="text-xs text-[var(--muted2)]">Goal: Conversion push</p>
+            </div>
+            <div class="flex items-center justify-between text-[10px] font-bold tracking-tighter uppercase text-[var(--muted2)] border-t border-black/10 dark:border-white/10 pt-2">
+              <span>Day 5</span>
+              <span class="text-primary bg-primary/10 px-2 py-0.5 rounded">Promo</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="email\welcome-05.html" class="py-2 text-[10px] text-center font-bold rounded bg-primary/20 text-primary hover:bg-primary/30 transition-colors">VIEW HTML</a>
+              <a href="assets\img\klayviyo-5.png" target="_blank" rel="noopener" class="py-2 text-[10px] text-center font-bold rounded bg-primary hover:bg-primary/90 text-white transition-colors shadow-sm">PREVIEW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section id="development" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="space-y-8">
+        <div class="reveal">
+          <h2 class="font-display text-3xl font-bold tracking-tight">Technical Implementation</h2>
+          <p class="text-[var(--muted)] mt-2">Building robust email templates that remain reliable in Outlook, Gmail, and Apple Mail.</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="reveal flex gap-4">
+            <div class="bg-primary/20 p-2 rounded-lg h-min text-primary">
+              <span class="material-symbols-outlined">table_chart</span>
+            </div>
+            <div>
+              <h4 class="font-bold">Table-Based Layouts</h4>
+              <p class="text-sm text-[var(--muted)]">Strict table structure for dependable layout behavior across legacy and modern email clients.</p>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-1 flex gap-4">
+            <div class="bg-primary/20 p-2 rounded-lg h-min text-primary">
+              <span class="material-symbols-outlined">responsive_layout</span>
+            </div>
+            <div>
+              <h4 class="font-bold">Mobile Responsive</h4>
+              <p class="text-sm text-[var(--muted)]">Fluid widths and safe stacking rules for smaller screens and touch-friendly viewing.</p>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2 flex gap-4">
+            <div class="bg-primary/20 p-2 rounded-lg h-min text-primary">
+              <span class="material-symbols-outlined">terminal</span>
+            </div>
+            <div>
+              <h4 class="font-bold">Outlook Compatibility</h4>
+              <p class="text-sm text-[var(--muted)]">MSO-aware code patterns for bulletproof buttons, spacing stability, and Word-rendering resilience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 glass-panel rounded-2xl overflow-hidden mt-8 lg:mt-0">
+        <div class="code-window px-4 py-3 flex items-center justify-between border-b border-black/10 dark:border-white/10">
+          <div class="flex gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+          </div>
+          <span class="text-[10px] font-mono text-white/70 uppercase tracking-widest">welcome_template.html</span>
+        </div>
+
+        <div class="p-6 font-mono text-sm overflow-x-auto whitespace-nowrap lg:whitespace-normal bg-black/50">
+          <p class="text-white/40 italic mb-2">&lt;!-- Bulletproof Button Pattern --&gt;</p>
+          <table role="presentation" border="0" cellspacing="0" class="hidden"><tr><td align="center" bgcolor="#7311d4"><a href="#" style="font-family: Arial; padding: 12px 24px;">Claim Your Offer</a></td></tr></table>
+          <p class="text-slate-300">&lt;<span class="text-primary">table</span> <span class="text-purple-300">role</span>=<span class="text-green-300">"presentation"</span> <span class="text-purple-300">border</span>=<span class="text-green-300">"0"</span> <span class="text-purple-300">cellspacing</span>=<span class="text-green-300">"0"</span>&gt;</p>
+          <p class="text-slate-300 ml-4">&lt;<span class="text-primary">tr</span>&gt;</p>
+          <p class="text-slate-300 ml-8">&lt;<span class="text-primary">td</span> <span class="text-purple-300">align</span>=<span class="text-green-300">"center"</span> <span class="text-purple-300">bgcolor</span>=<span class="text-green-300">"#7311d4"</span>&gt;</p>
+          <p class="text-slate-300 ml-12">&lt;<span class="text-primary">a</span> <span class="text-purple-300">href</span>=<span class="text-green-300">"#"</span> <span class="text-purple-300">style</span>=<span class="text-green-300">"font-family: Arial; padding: 12px 24px..."</span>&gt;</p>
+          <p class="text-white ml-16 font-bold">Claim Your Offer</p>
+          <p class="text-slate-300 ml-12">&lt;/<span class="text-primary">a</span>&gt;</p>
+          <p class="text-slate-300 ml-8">&lt;/<span class="text-primary">td</span>&gt;</p>
+          <p class="text-slate-300 ml-4">&lt;/<span class="text-primary">tr</span>&gt;</p>
+          <p class="text-slate-300">&lt;/<span class="text-primary">table</span>&gt;</p>
+
+          <p class="mt-6 text-white/40 italic mb-2">&lt;!-- Conditional MSO Hack --&gt;</p>
+          <p class="text-blue-300">&lt;!--[if mso]&gt;</p>
+          <p class="text-slate-400 ml-4">&lt;<span class="text-orange-300">v:roundrect</span> xmlns:v="urn:schemas-microsoft-com:vml"</p>
+          <p class="text-slate-400 ml-12">arcsize="10%" strokecolor="#7311d4" fillcolor="#7311d4"&gt;</p>
+          <p class="text-slate-400 ml-8">&lt;<span class="text-orange-300">w:anchorlock</span>/&gt;</p>
+          <p class="text-slate-400 ml-8">&lt;center style="color:#ffffff; font-family:Arial,sans-serif;"&gt;</p>
+          <p class="text-white ml-12 font-bold">Claim Your Offer</p>
+          <p class="text-slate-400 ml-8">&lt;/center&gt;</p>
+          <p class="text-slate-400 ml-4">&lt;/<span class="text-orange-300">v:roundrect</span>&gt;</p>
+          <p class="text-blue-300">&lt;![endif]--&gt;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance -->
+    <section id="performance" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="text-center mb-12 reveal">
+        <h2 class="font-display text-3xl font-bold tracking-tight mb-4">Portfolio Simulation Benchmarks</h2>
+        <p class="text-[var(--muted)]">Illustrative metrics used to frame how the flow could be evaluated in a real campaign context.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal glass-panel p-8 rounded-2xl text-center space-y-2 border-b-4 border-b-primary hover:-translate-y-2 transition-transform shadow-lg shadow-black/10">
+          <p class="text-[var(--muted2)] text-xs font-bold uppercase tracking-wider">Open Rate</p>
+          <p class="text-3xl sm:text-4xl md:text-5xl font-black">42.8%</p>
+          <p class="text-xs text-green-500 flex items-center justify-center gap-1 mt-2 bg-green-500/10 py-1 px-2 rounded-full w-fit mx-auto">
+            <span class="material-symbols-outlined text-xs">trending_up</span> benchmark target
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-1 glass-panel p-8 rounded-2xl text-center space-y-2 border-b-4 border-b-primary hover:-translate-y-2 transition-transform shadow-lg shadow-black/10">
+          <p class="text-[var(--muted2)] text-xs font-bold uppercase tracking-wider">Click Rate</p>
+          <p class="text-3xl sm:text-4xl md:text-5xl font-black">6.4%</p>
+          <p class="text-xs text-green-500 flex items-center justify-center gap-1 mt-2 bg-green-500/10 py-1 px-2 rounded-full w-fit mx-auto">
+            <span class="material-symbols-outlined text-xs">trending_up</span> benchmark target
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-2 glass-panel p-8 rounded-2xl text-center space-y-2 border-b-4 border-b-primary hover:-translate-y-2 transition-transform shadow-lg shadow-black/10">
+          <p class="text-[var(--muted2)] text-xs font-bold uppercase tracking-wider">Conversion</p>
+          <p class="text-3xl sm:text-4xl md:text-5xl font-black">3.1%</p>
+          <p class="text-xs text-[var(--muted)] flex items-center justify-center gap-1 mt-2 bg-black/5 dark:bg-white/5 py-1 px-2 rounded-full w-fit mx-auto">
+            <span class="material-symbols-outlined text-xs">sell</span> flow goal
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-3 glass-panel p-8 rounded-2xl text-center space-y-2 border-b-4 border-b-primary hover:-translate-y-2 transition-transform shadow-lg shadow-black/10">
+          <p class="text-[var(--muted2)] text-xs font-bold uppercase tracking-wider">Rev / 1000 Subs</p>
+          <p class="text-3xl sm:text-4xl md:text-5xl font-black text-primary">$1,240</p>
+          <p class="text-xs text-primary font-bold mt-2 bg-primary/10 py-1 px-2 rounded-full w-fit mx-auto">illustrative value</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QA -->
+    <section id="qa" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <h2 class="font-display text-3xl font-bold tracking-tight shrink-0">Rigorous QA Testing</h2>
+        <div class="h-px flex-1 bg-black/10 dark:bg-white/10 ml-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div class="reveal glass-panel p-8 rounded-2xl border-l-4 border-l-primary flex flex-col justify-center">
+          <h4 class="text-xl font-bold flex items-center gap-2 mb-2">
+            <span class="material-symbols-outlined text-primary">fact_check</span> QA Checklist
+          </h4>
+
+          <ul class="space-y-5 mt-4">
+            <li class="flex items-center gap-3 text-[var(--text)]">
+              <span class="material-symbols-outlined text-green-500 text-xl">check_circle</span>
+              <span class="text-sm font-medium">All links verified</span>
+            </li>
+            <li class="flex items-center gap-3 text-[var(--text)]">
+              <span class="material-symbols-outlined text-green-500 text-xl">check_circle</span>
+              <span class="text-sm font-medium">Images optimized and ALT text added</span>
+            </li>
+            <li class="flex items-center gap-3 text-[var(--text)]">
+              <span class="material-symbols-outlined text-green-500 text-xl">check_circle</span>
+              <span class="text-sm font-medium">Dark mode awareness checked</span>
+            </li>
+            <li class="flex items-center gap-3 text-[var(--text)]">
+              <span class="material-symbols-outlined text-green-500 text-xl">check_circle</span>
+              <span class="text-sm font-medium">Plain-text version prepared</span>
+            </li>
+            <li class="flex items-center gap-3 text-[var(--text)]">
+              <span class="material-symbols-outlined text-green-500 text-xl">check_circle</span>
+              <span class="text-sm font-medium">Cross-client rendering review</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+          <div class="reveal reveal-delay-1 glass-panel rounded-xl overflow-hidden group h-full flex flex-col">
+            <div class="bg-zinc-900 aspect-[9/16] flex items-center justify-center relative flex-1">
+              <img loading="lazy" src="assets/img/iphonexr_13_dm.png" alt="Mobile rendering preview proof" class="absolute h-full w-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+              <span class="material-symbols-outlined text-4xl text-white/10 absolute z-0 group-hover:scale-110 transition-transform">smartphone</span>
+            </div>
+            <div class="p-3 text-center text-xs font-bold text-[var(--muted2)] uppercase tracking-widest bg-black/5 dark:bg-white/5 border-t border-black/10 dark:border-white/10">Mobile Preview</div>
+          </div>
+
+          <div class="reveal reveal-delay-2 glass-panel rounded-xl overflow-hidden group h-full flex flex-col">
+            <div class="bg-zinc-900 aspect-[9/16] flex items-center justify-center relative flex-1">
+              <img loading="lazy" src="assets/img/applemail13.jpg" alt="Desktop email client preview proof" class="absolute h-full w-full object-cover object-left opacity-60 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+              <span class="material-symbols-outlined text-4xl text-white/10 absolute z-0 group-hover:scale-110 transition-transform">mail</span>
+            </div>
+            <div class="p-3 text-center text-xs font-bold text-[var(--muted2)] uppercase tracking-widest bg-black/5 dark:bg-white/5 border-t border-black/10 dark:border-white/10">Desktop Preview</div>
+          </div>
+
+          <div class="reveal reveal-delay-3 glass-panel rounded-xl overflow-hidden group h-full flex flex-col">
+            <div class="bg-zinc-900 aspect-[9/16] flex items-center justify-center relative flex-1">
+              <img loading="lazy" src="assets/img/wde_ie11_win.png" alt="Outlook rendering proof" class="absolute h-full w-full object-cover object-left opacity-60 group-hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+              <span class="material-symbols-outlined text-4xl text-white/10 absolute z-0 group-hover:scale-110 transition-transform">desktop_windows</span>
+            </div>
+            <div class="p-3 text-center text-xs font-bold text-[var(--muted2)] uppercase tracking-widest bg-black/5 dark:bg-white/5 border-t border-black/10 dark:border-white/10">Outlook Preview</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="text-center reveal">
+        <h2 class="text-xl font-bold uppercase tracking-[0.2em] text-[var(--muted2)] mb-8">Tech Stack &amp; Tools</h2>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="flex items-center gap-2 px-6 py-3 rounded-full glass-panel border border-black/10 dark:border-white/10 group hover:border-primary transition-colors cursor-default">
+            <span class="material-symbols-outlined text-primary">dynamic_form</span>
+            <span class="font-bold text-sm">Klaviyo</span>
+          </div>
+
+          <div class="flex items-center gap-2 px-6 py-3 rounded-full glass-panel border border-black/10 dark:border-white/10 group hover:border-primary transition-colors cursor-default">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            <span class="font-bold text-sm">HTML Email</span>
+          </div>
+
+          <div class="flex items-center gap-2 px-6 py-3 rounded-full glass-panel border border-black/10 dark:border-white/10 group hover:border-primary transition-colors cursor-default">
+            <span class="material-symbols-outlined text-primary">css</span>
+            <span class="font-bold text-sm">Tailwind CSS</span>
+          </div>
+
+          <div class="flex items-center gap-2 px-6 py-3 rounded-full glass-panel border border-black/10 dark:border-white/10 group hover:border-primary transition-colors cursor-default">
+            <span class="material-symbols-outlined text-primary">bug_report</span>
+            <span class="font-bold text-sm">Litmus / Email on Acid</span>
+          </div>
+
+          <div class="flex items-center gap-2 px-6 py-3 rounded-full glass-panel border border-black/10 dark:border-white/10 group hover:border-primary transition-colors cursor-default">
+            <span class="material-symbols-outlined text-primary">polyline</span>
+            <span class="font-bold text-sm">Figma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="text-center space-y-4 mb-16 reveal">
+        <h2 class="font-display text-3xl font-bold tracking-tight">Project Roadmap</h2>
+        <p class="text-[var(--muted)]">Chronological execution of the campaign build.</p>
+      </div>
+
+      <div class="relative px-6">
+        <div class="absolute top-6 left-0 w-full h-0.5 bg-black/10 dark:bg-white/10 hidden md:block"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          <div class="reveal flex flex-col items-center md:items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-black z-10 shadow-[0_0_20px_rgba(115,17,212,0.5)] shrink-0">1</div>
+            <div class="space-y-2 text-center md:text-left pt-2">
+              <h4 class="font-bold text-lg">Design</h4>
+              <p class="text-sm text-[var(--muted)]">Branding, wireframing, landing page direction, and email content planning.</p>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-1 flex flex-col items-center md:items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-black z-10 shadow-[0_0_20px_rgba(115,17,212,0.5)] shrink-0">2</div>
+            <div class="space-y-2 text-center md:text-left pt-2">
+              <h4 class="font-bold text-lg">Build Templates</h4>
+              <p class="text-sm text-[var(--muted)]">Hand-coding responsive HTML email templates with safe structure for ESP usage.</p>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2 flex flex-col items-center md:items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-black z-10 shadow-[0_0_20px_rgba(115,17,212,0.5)] shrink-0">3</div>
+            <div class="space-y-2 text-center md:text-left pt-2">
+              <h4 class="font-bold text-lg">Testing</h4>
+              <p class="text-sm text-[var(--muted)]">Rendering QA, link validation, image review, and dark mode checks.</p>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-3 flex flex-col items-center md:items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-white/70 dark:bg-black/40 border-2 border-primary text-primary flex items-center justify-center font-black z-10 shadow-[0_0_20px_rgba(115,17,212,0.2)] shrink-0">4</div>
+            <div class="space-y-2 text-center md:text-left pt-2">
+              <h4 class="font-bold text-lg text-[var(--text)]">Implement</h4>
+              <p class="text-sm text-[var(--muted)]">Flow trigger setup, email ordering, timing rules, and campaign deployment steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="w-full border-t border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+        <div class="glass-panel rounded-2xl overflow-hidden">
+          <div class="h-[5px] w-full bg-gradient-to-r from-[#895af6] to-[#06b6d4]"></div>
+
+          <div class="p-6 sm:p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+              <div class="shrink-0">
+                <div class="relative">
+                  <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/25 to-accent-cyan/25 blur opacity-50"></div>
+                  <img
+                    src="assets/img/avatar.png"
+                    alt="Christopher Shangrei"
+                    class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border border-black/10 dark:border-white/10"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
+              </div>
+
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-col gap-3">
+                  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3">
+                    <div class="min-w-0">
+                      <p class="font-display font-extrabold text-lg sm:text-xl tracking-tight uppercase leading-tight">
+                        CHRISTOPHER SHANGREI
+                      </p>
+                      <p class="text-xs font-bold tracking-[0.22em] uppercase text-[var(--muted2)] mt-1">
+                        HTML Email Developer • Klaviyo case study
+                      </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                      <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
+                        Outlook-safe
+                      </span>
+                      <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-black/5 dark:bg-white/5 text-[var(--muted)] border border-black/10 dark:border-white/10">
+                        QA-first
+                      </span>
+                      <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20">
+                        Automation
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="text-sm text-[var(--muted)] leading-relaxed max-w-2xl">
+                    This case study demonstrates how I structure a landing page to automation journey, build responsive HTML emails,
+                    and present QA thinking in a portfolio-ready format.
+                  </p>
+
+                  <div class="mt-1 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a
+                      href="mailto:chris.shangrei@gmail.com"
+                      class="group flex items-center gap-3 rounded-xl px-4 py-3 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-primary/30 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-primary">mail</span>
+                      <span class="text-sm font-semibold text-[var(--muted)] group-hover:text-[var(--text)] transition-colors truncate">
+                        chris.shangrei@gmail.com
+                      </span>
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/in/christopher-shangrei-949a9a3b3/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group flex items-center gap-3 rounded-xl px-4 py-3 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-primary/30 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-primary">work</span>
+                      <span class="text-sm font-semibold text-[var(--muted)] group-hover:text-[var(--text)] transition-colors">
+                        LinkedIn
+                      </span>
+                    </a>
+
+                    <a
+                      href="https://github.com/xhangreichris-max"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group flex items-center gap-3 rounded-xl px-4 py-3 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-primary/30 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-primary">code</span>
+                      <span class="text-sm font-semibold text-[var(--muted)] group-hover:text-[var(--text)] transition-colors">
+                        GitHub
+                      </span>
+                    </a>
+
+                    <a
+                      href="../work/assets/img/Christopher_Shangrei_resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group flex items-center gap-3 rounded-xl px-4 py-3 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-primary/30 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-primary">description</span>
+                      <span class="text-sm font-semibold text-[var(--muted)] group-hover:text-[var(--text)] transition-colors">
+                        Resume (PDF)
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="shrink-0 flex flex-col sm:flex-row md:flex-col gap-3">
+                <a
+                  href="#emails"
+                  class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold transition-colors shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[20px]">mail</span>
+                  View Emails
+                </a>
+
+                <a
+                  href="../index.html"
+                  class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 font-bold transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]">home</span>
+                  Back Home
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-[var(--muted2)]">
+          <p>© 2026 Christopher Shangrei. Built with HTML + Tailwind + Vanilla JS.</p>
+          <p class="flex items-center gap-2">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-accent-cyan"></span>
+            Open to remote roles • India (IST)
+          </p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button
+    id="toTop"
+    class="glass-panel rounded-xl px-3 py-3 inline-flex items-center justify-center border border-black/10 dark:border-white/10 hover:opacity-90 transition"
+    type="button"
+    aria-label="Scroll to top"
+    title="Scroll to top"
+  >
+    <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+  </button>
+
+  <!-- Smooth Reveal Script -->
+  <script>
+    (function () {
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return;
+
+      const els = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    (function () {
+      const btn = document.getElementById("themeToggle");
+      if (!btn) return;
+
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch(e){}
+      });
+    })();
+  </script>
+
+  <!-- Scroll progress -->
+  <script>
+    (function () {
+      const bar = document.getElementById("scrollbar");
+      if (!bar) return;
+
+      function onScroll(){
+        const h = document.documentElement;
+        const max = (h.scrollHeight - h.clientHeight) || 1;
+        const scrolled = h.scrollTop / max;
+        bar.style.width = Math.max(0, Math.min(1, scrolled)) * 100 + "%";
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <!-- Scroll to top -->
+  <script>
+    (function () {
+      const btn = document.getElementById("toTop");
+      if (!btn) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function update(){
+        const y = window.scrollY || document.documentElement.scrollTop || 0;
+        if (y > 420) btn.classList.add("is-visible");
+        else btn.classList.remove("is-visible");
+      }
+
+      btn.addEventListener("click", () => {
+        if (reduce) {
+          window.scrollTo(0, 0);
+          return;
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      window.addEventListener("scroll", update, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>
